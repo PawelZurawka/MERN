@@ -10,7 +10,7 @@ class PostsCounter extends React.Component {
     } else {
       number = count;
     }
-    return <div>Posts count: {number}</div>;
+    return <div>Posts amount: {number}</div>;
   }
 }
 PostsCounter.propTypes = {
