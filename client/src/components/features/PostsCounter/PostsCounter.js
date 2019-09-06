@@ -1,9 +1,20 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 class PostsCounter extends React.Component {
   render() {
-    return <div>Posts counter</div>;
+    const { count } = this.props;
+    let number;
+    if (count === 0) {
+      number = 'No posts';
+    } else {
+      number = count;
+    }
+    return <div>Posts count: {number}</div>;
   }
 }
+PostsCounter.propTypes = {
+  count: PropTypes.number
+};
 
 export default PostsCounter;

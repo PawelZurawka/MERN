@@ -1,7 +1,9 @@
-/* SELECTORS */
 import axios from 'axios';
 import { API_URL } from '../config';
+
+/* SELECTORS */
 export const getPosts = ({ posts }) => posts;
+export const getPostsCounter = ({ posts }) => posts.length;
 
 // action name creator
 const reducerName = 'posts';
@@ -15,17 +17,6 @@ export const loadPosts = payload => ({ payload, type: LOAD_POSTS });
 
 const initialState = [];
 
-/* REDUCER */
-
-export default function reducer(statePart = initialState, action = {}) {
-  switch (action.type) {
-    case LOAD_POSTS:
-      return [...action.payload];
-    default:
-      return statePart;
-  }
-}
-
 /* THUNKS */
 export const loadPostsRequest = () => {
   return async dispatch => {
@@ -37,3 +28,14 @@ export const loadPostsRequest = () => {
     }
   };
 };
+
+/* REDUCER */
+
+export default function reducer(statePart = initialState, action = {}) {
+  switch (action.type) {
+    case LOAD_POSTS:
+      return [...action.payload];
+    default:
+      return statePart;
+  }
+}

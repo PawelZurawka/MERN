@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getPosts, loadPostsRequest } from '../../../redux/PostsRedux';
+import { getPosts, loadPostsRequest } from '../../../redux/postsRedux';
 import Posts from './Posts';
 
 const mapStateToProps = state => ({
