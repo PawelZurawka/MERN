@@ -11,10 +11,9 @@ exports.getPosts = async (req, res) => {
 
 // get single post
 exports.getSinglePost = async (req, res) => {
-  Post.findOne({ id: req.params.id }).exec((err, post) => {
-    if (err) {
-      res.status(500).send(err);
-    }
-    res.json(post);
-  });
+  try {
+    res.status(200).json(await Post.findOne({ id: req.params.id }));
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };
