@@ -1,8 +1,9 @@
 import React from 'react';
+import SinglePostContainer from '../../features/SinglePost/SinglePostContainer';
 
 const SinglePostPage = () => (
   <div>
-    <h1>One single post</h1>
+    <SinglePostContainer />
   </div>
 );
 
