@@ -33,7 +33,7 @@ const initialState = {
     error: null,
     success: null
   },
-  singlePost: null
+  singlePost: {}
 };
 
 /* THUNKS */
