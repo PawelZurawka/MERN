@@ -15,7 +15,11 @@ class SinglePost extends React.Component {
   render() {
     const { post, request } = this.props;
 
-    if (request.pending === false && request.success === true && post) {
+    if (
+      request.pending === false &&
+      request.success === true &&
+      post !== null
+    ) {
       return (
         <div>
           <article>
@@ -45,7 +49,7 @@ class SinglePost extends React.Component {
     } else {
       return (
         <div>
-          <Alert variant='info'>Something went wrong...</Alert>
+          <Alert variant='info'>Something went wrong!</Alert>
         </div>
       );
     }
