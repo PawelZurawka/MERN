@@ -5,11 +5,11 @@ import PostsCounterContainer from '../../features/PostsCounter/PostsCounterConta
 import Posts from '../../features/Posts/PostsContainer';
 
 const PostsPage = () => (
-  <div>
+  <>
     <PageTitle>Posts list</PageTitle>
     <PostsCounterContainer />
     <Posts />
-  </div>
+  </>
 );
 
 export default PostsPage;

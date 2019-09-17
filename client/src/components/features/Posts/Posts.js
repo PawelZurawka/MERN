@@ -18,39 +18,19 @@ class Posts extends React.Component {
       request.success === true &&
       posts.length > 0
     ) {
-      return (
-        <div>
-          <PostsList posts={posts} />
-        </div>
-      );
+      return <PostsList posts={posts} />;
     } else if (request.pending === true || request.success === null) {
-      return (
-        <div>
-          <Spinner />
-        </div>
-      );
+      return <Spinner />;
     } else if (request.pending === false && request.error != null) {
-      return (
-        <div>
-          <Alert variant='error'>{request.error}</Alert>
-        </div>
-      );
+      return <Alert variant='error'>{request.error}</Alert>;
     } else if (
       request.pending === false &&
       request.success === true &&
       posts.length === 0
     ) {
-      return (
-        <div>
-          <Alert variant='info'>No posts</Alert>
-        </div>
-      );
+      return <Alert variant='info'>No posts</Alert>;
     } else {
-      return (
-        <div>
-          <Alert variant='info'>Something went wrong!</Alert>
-        </div>
-      );
+      return <Alert variant='info'>Something went wrong!</Alert>;
     }
   }
 }

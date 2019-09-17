@@ -21,37 +21,19 @@ class SinglePost extends React.Component {
       post !== null
     ) {
       return (
-        <div>
-          <article>
-            <SmallTitle>{post.title}</SmallTitle>
-            <HtmlBox>{post.content}</HtmlBox>
-          </article>
-        </div>
+        <article>
+          <SmallTitle>{post.title}</SmallTitle>
+          <HtmlBox>{post.content}</HtmlBox>
+        </article>
       );
     } else if (request.pending === true || request.success === null) {
-      return (
-        <div>
-          <Spinner />
-        </div>
-      );
+      return <Spinner />;
     } else if (request.pending === false && request.error !== null) {
-      return (
-        <div>
-          <Alert variant='error'>{request.error}</Alert>
-        </div>
-      );
+      return <Alert variant='error'>{request.error}</Alert>;
     } else if (request.pending === false && request.success === true) {
-      return (
-        <div>
-          <Alert variant='info'>No posts</Alert>
-        </div>
-      );
+      return <Alert variant='info'>No posts</Alert>;
     } else {
-      return (
-        <div>
-          <Alert variant='info'>Something went wrong!</Alert>
-        </div>
-      );
+      return <Alert variant='info'>Something went wrong!</Alert>;
     }
   }
 }
